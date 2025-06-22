@@ -1,8 +1,6 @@
 streamlit
 pandas
-sweetviz
 plotly
-setuptools
 openpyxl
-xlrd
-numpy==1.23.5
+seaborn
+matplotlib
