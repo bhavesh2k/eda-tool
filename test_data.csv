@@ -1,0 +1,8 @@
+Name,Age,Salary,Department,JoiningDate
+Alice,29,70000.0,Sales,2020-05-10
+Bob,35,85000.0,Engineering,2018-08-21
+Charlie,28,,HR,2021-01-15
+David,42,120000.0,Engineering,2010-03-30
+Eve,31,90000.0,Marketing,2019-11-05
+Frank,38,110000.0,,2015-07-22
+Grace,25,65000.0,Sales,2022-06-01
