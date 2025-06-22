@@ -3,3 +3,5 @@ pandas
 sweetviz
 plotly
 setuptools
+openpyxl
+xlrd

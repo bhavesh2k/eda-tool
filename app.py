@@ -9,10 +9,20 @@ import os
 st.set_page_config(page_title="EDA Tool", layout="wide")
 st.title("🔍 Exploratory Data Analysis (EDA) Tool")
 
-uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
+uploaded_file = st.file_uploader("Upload your file (CSV or Excel)", type=["csv", "xlsx", "xls"])
 
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+    file_ext = uploaded_file.name.split(".")[-1]
+
+    try:
+        if file_ext in ["xlsx", "xls"]:
+            df = pd.read_excel(uploaded_file)
+        else:
+            df = pd.read_csv(uploaded_file)
+    except Exception as e:
+        st.error(f"❌ Failed to read file: {e}")
+        st.stop()
+
     st.subheader("📌 Data Preview")
     st.dataframe(df.head())
 
@@ -26,9 +36,6 @@ if uploaded_file is not None:
         with open(tmp_file.name, 'r', encoding='utf-8') as f:
             html_content = f.read()
             html(html_content, height=1000, scrolling=True)
-
-        # Optionally delete temp file later (after rendering)
-        # os.unlink(tmp_file.name)  # <-- comment this out or delay deletion
 
     st.subheader("📉 Missing Values")
     missing = df.isnull().sum()
@@ -52,4 +59,4 @@ if uploaded_file is not None:
     else:
         st.warning("❗ Not enough numerical columns for correlation analysis.")
 else:
-    st.info("👆 Upload a CSV file to get started.")
+    st.info("👆 Upload a CSV or Excel file to get started.")
