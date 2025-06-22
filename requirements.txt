@@ -2,3 +2,4 @@ streamlit
 pandas
 sweetviz
 plotly
+setuptools
