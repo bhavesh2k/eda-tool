@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Light EDA Tool", layout="wide")
-st.title("📊 Lightweight EDA Tool")
+st.title("📊 Exploratory Data Analysis (EDA) Tool")
 
 uploaded_file = st.file_uploader("Upload CSV or Excel file", type=["csv", "xlsx", "xls"])
 
