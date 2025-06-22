@@ -5,3 +5,4 @@ plotly
 setuptools
 openpyxl
 xlrd
+numpy==1.23.5
